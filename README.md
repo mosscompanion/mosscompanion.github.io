@@ -6,4 +6,7 @@ The existing MOSS Countdown privacy policy remains independently published at:
 
 https://mosscompanion.github.io/moss-countdown-privacy/
 
-Do not remove or redirect that legacy URL while it is used by Google Play.
+The new site also includes `/moss-countdown-privacy/` so the legacy GitHub
+Pages URL continues to resolve correctly after the custom domain is enabled.
+
+Do not remove that compatibility path while it is used by Google Play.
