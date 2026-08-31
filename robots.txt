@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://madebymoss.co.uk/sitemap.xml
