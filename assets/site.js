@@ -94,3 +94,26 @@ if (toggle && nav) {
 document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = String(new Date().getFullYear());
 });
+
+document.querySelectorAll('[data-copy-email]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const email = button.dataset.copyEmail;
+    const status = button.parentElement.querySelector('.copy-status');
+
+    try {
+      await navigator.clipboard.writeText(email);
+      status.textContent = 'Email address copied!';
+    } catch {
+      const field = document.createElement('textarea');
+      field.value = email;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.append(field);
+      field.select();
+      document.execCommand('copy');
+      field.remove();
+      status.textContent = 'Email address copied!';
+    }
+  });
+});
