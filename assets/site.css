@@ -101,15 +101,15 @@ p { margin: 0 0 1rem; }
   .site-nav a { padding: 8px 10px; font-size: .88rem; }
   .hero { padding: 86px 0 70px; }
   .hero-grid, .detail-grid { grid-template-columns: 1.1fr .9fr; }
-  .cards.two { grid-template-columns: repeat(2, 1fr); }
   .cards.three { grid-template-columns: repeat(3, 1fr); }
-  .app-card { grid-template-columns: auto 1fr; }
   .footer-grid { grid-template-columns: 1fr auto; align-items: end; }
 }
 
 @media (min-width: 1000px) {
   .site-nav a { padding-inline: 13px; font-size: .94rem; }
   .hero-art { min-height: 470px; }
+  .cards.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
+  .app-card { grid-template-columns: auto 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
