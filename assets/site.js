@@ -22,6 +22,23 @@ if (window.location.pathname === '/moss-countdown/') {
     countdownLogo.src = '/assets/moss-countdown.png';
     countdownLogo.alt = 'MOSS Countdown app icon';
   }
+
+  const playButton = document.querySelector('.button-row a[href*="play.google.com"]');
+  if (playButton) {
+    const status = document.createElement('span');
+    status.className = 'button disabled';
+    status.setAttribute('aria-label', 'MOSS Countdown is coming sooner');
+    status.textContent = 'Coming sooner!';
+    playButton.replaceWith(status);
+  }
+}
+
+if (window.location.pathname === '/moss-companion/') {
+  const status = document.querySelector('.button.disabled[aria-label*="Google Play"]');
+  if (status) {
+    status.setAttribute('aria-label', 'MOSS Companion is coming soon');
+    status.textContent = 'Coming soon';
+  }
 }
 
 if (toggle && nav) {

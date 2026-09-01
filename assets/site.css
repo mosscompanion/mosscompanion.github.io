@@ -71,6 +71,7 @@ p { margin: 0 0 1rem; }
 .card:nth-child(2n) { background: #fbf2dc; }
 .app-card { display: grid; gap: 22px; }
 .app-card:nth-child(2n) { background: var(--paper); }
+.app-status { width: fit-content; min-height: 40px; margin: 10px 12px 0 0; padding: 7px 15px; }
 .app-icon { width: 112px; height: 112px; padding: 7px; border-radius: 30px; background: #f4f0df; object-fit: contain; }
 .tag { display: inline-block; width: fit-content; margin-bottom: 12px; padding: 5px 11px; border-radius: 999px; background: var(--sage); color: var(--green-dark); font-size: .8rem; font-weight: 700; }
 .text-link { font-weight: 700; }
