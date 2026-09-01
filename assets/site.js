@@ -92,6 +92,16 @@ document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = String(new Date().getFullYear());
 });
 
+document.querySelectorAll('[data-birth-date]').forEach((node) => {
+  const today = new Date();
+  const birthDate = new Date(`${node.dataset.birthDate}T00:00:00`);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const birthdayHasPassed = today.getMonth() > birthDate.getMonth()
+    || (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  if (!birthdayHasPassed) age -= 1;
+  node.textContent = age < 1 ? 'Not even one' : `${age} years old`;
+});
+
 document.querySelectorAll('[data-copy-email]').forEach((button) => {
   button.addEventListener('click', async () => {
     const email = button.dataset.copyEmail;
