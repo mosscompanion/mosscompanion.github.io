@@ -121,6 +121,7 @@ p { margin: 0 0 1rem; }
 .dog-card h2 { font-size: clamp(2rem, 4vw, 3rem); }
 .dog-photo-frame { aspect-ratio: 4 / 3; display: grid; place-items: center; overflow: hidden; border-radius: 20px; background: var(--sage); }
 .dog-photo { width: 92%; height: 92%; object-fit: contain; }
+.dog-photo-pixie { width: 78%; height: 78%; }
 .dog-card:nth-child(2) .dog-photo-frame { background: var(--pink); }
 .dog-card:nth-child(3) .dog-photo-frame { background: var(--yellow); }
 .dog-team-mark { width: min(54vw, 230px); }
