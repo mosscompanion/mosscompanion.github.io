@@ -12,36 +12,33 @@ if (headerBrand) {
   headerBrand.append(words, logo);
 }
 
-document.querySelectorAll('.site-nav a[href="/about/"]').forEach((link) => {
-  link.textContent = 'The Human Bit';
-});
-
-document.querySelectorAll('.site-nav a[href="/"]').forEach((link) => {
-  link.classList.add('home-link');
-  link.setAttribute('aria-label', 'Home');
-  link.title = 'Home';
-  const house = document.createElement('img');
-  house.src = '/assets/home-house.png';
-  house.alt = '';
+const addNavIcon = (element, labelText, iconSrc) => {
+  const icon = document.createElement('img');
+  icon.className = 'nav-item-icon';
+  icon.src = iconSrc;
+  icon.alt = '';
   const label = document.createElement('span');
-  label.className = 'home-label';
-  label.textContent = 'Home';
-  link.replaceChildren(house, label);
-});
+  label.textContent = labelText;
+  element.replaceChildren(icon, label);
+};
 
 if (nav) {
   const home = nav.querySelector('a[href="/"]');
   const companion = nav.querySelector('a[href="/moss-companion/"]');
   const countdown = nav.querySelector('a[href="/moss-countdown/"]');
   const humanBit = nav.querySelector('a[href="/about/"]');
+  const security = nav.querySelector('a[href="/privacy/"]');
   const contact = nav.querySelector('a[href="/support/"]');
 
-  if (home && companion && countdown && humanBit && contact) {
-    contact.textContent = 'Contact';
+  if (home && companion && countdown && humanBit && security && contact) {
+    addNavIcon(home, 'Home', '/assets/nav-home.png');
+    addNavIcon(humanBit, 'The Human Bit', '/assets/nav-human.png');
+    addNavIcon(security, 'Security', '/assets/nav-security.png');
+    addNavIcon(contact, 'Contact', '/assets/nav-contact.png');
     const appsMenu = document.createElement('details');
     appsMenu.className = 'apps-menu';
     const summary = document.createElement('summary');
-    summary.textContent = 'The Apps';
+    addNavIcon(summary, 'The Apps', '/assets/nav-apps.png');
     const dropdown = document.createElement('div');
     dropdown.className = 'apps-dropdown';
     const comingSoon = document.createElement('a');
@@ -49,7 +46,7 @@ if (nav) {
     comingSoon.textContent = 'Coming Soon';
     dropdown.append(companion, countdown, comingSoon);
     appsMenu.append(summary, dropdown);
-    nav.replaceChildren(home, appsMenu, humanBit, contact);
+    nav.replaceChildren(home, appsMenu, humanBit, security, contact);
   }
 }
 
