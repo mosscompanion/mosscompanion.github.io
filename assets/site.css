@@ -43,6 +43,7 @@ p { margin: 0 0 1rem; }
 .nav-wrap { width: min(calc(100% - 28px), var(--content)); min-height: 72px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--green-dark); font-size: 1.2rem; font-weight: 700; text-decoration: none; }
 .brand img { width: 44px; height: 44px; border-radius: 14px; object-fit: cover; }
+.site-header .brand img { border-radius: 0; object-fit: contain; }
 .menu-toggle { border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; color: var(--brown); background: var(--paper); font: 600 .95rem 'Lexend', sans-serif; }
 .site-nav { display: none; position: absolute; left: 14px; right: 14px; top: 65px; padding: 12px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); box-shadow: var(--shadow); }
 .site-nav.open { display: grid; }
@@ -69,6 +70,7 @@ p { margin: 0 0 1rem; }
 .card { position: relative; overflow: hidden; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: var(--shadow); }
 .card:nth-child(2n) { background: #fbf2dc; }
 .app-card { display: grid; gap: 22px; }
+.app-card:nth-child(2n) { background: var(--paper); }
 .app-icon { width: 112px; height: 112px; padding: 7px; border-radius: 30px; background: #f4f0df; object-fit: contain; }
 .tag { display: inline-block; width: fit-content; margin-bottom: 12px; padding: 5px 11px; border-radius: 999px; background: var(--sage); color: var(--green-dark); font-size: .8rem; font-weight: 700; }
 .text-link { font-weight: 700; }
