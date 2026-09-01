@@ -35,9 +35,8 @@ if (nav) {
   const countdown = nav.querySelector('a[href="/moss-countdown/"]');
   const humanBit = nav.querySelector('a[href="/about/"]');
   const contact = nav.querySelector('a[href="/support/"]');
-  const privacy = nav.querySelector('a[href="/privacy/"]');
 
-  if (home && companion && countdown && humanBit && contact && privacy) {
+  if (home && companion && countdown && humanBit && contact) {
     contact.textContent = 'Contact';
     const appsMenu = document.createElement('details');
     appsMenu.className = 'apps-menu';
@@ -50,7 +49,7 @@ if (nav) {
     comingSoon.textContent = 'Coming Soon';
     dropdown.append(companion, countdown, comingSoon);
     appsMenu.append(summary, dropdown);
-    nav.replaceChildren(home, appsMenu, humanBit, contact, privacy);
+    nav.replaceChildren(home, appsMenu, humanBit, contact);
   }
 }
 
