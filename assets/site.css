@@ -21,9 +21,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--brown);
-  background:
-    radial-gradient(circle at 10% 2%, rgba(111, 155, 100, .18), transparent 24rem),
-    var(--cream);
+  background: var(--cream);
   font-family: 'Lexend', sans-serif;
   font-weight: 400;
   line-height: 1.65;
