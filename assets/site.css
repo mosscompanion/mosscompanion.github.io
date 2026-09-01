@@ -122,7 +122,6 @@ p { margin: 0 0 1rem; }
 .dog-photo-pixie { width: 78%; height: 78%; }
 .dog-card:nth-child(2) .dog-photo-frame { background: var(--pink); }
 .dog-card:nth-child(3) .dog-photo-frame { background: var(--yellow); }
-.dog-team-mark { width: min(54vw, 230px); }
 .dog-role { margin: 8px 0 14px; color: var(--green); font-weight: 700; }
 .dog-details { display: grid; gap: 5px; margin: 0 0 16px; }
 .dog-details div { display: grid; grid-template-columns: auto 1fr; gap: 6px; }
