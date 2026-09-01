@@ -38,6 +38,7 @@ if (nav) {
   const privacy = nav.querySelector('a[href="/privacy/"]');
 
   if (home && companion && countdown && humanBit && contact && privacy) {
+    contact.textContent = 'Contact';
     const appsMenu = document.createElement('details');
     appsMenu.className = 'apps-menu';
     const summary = document.createElement('summary');
