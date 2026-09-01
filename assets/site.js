@@ -26,6 +26,30 @@ document.querySelectorAll('.site-nav a[href="/"]').forEach((link) => {
   link.replaceChildren(house);
 });
 
+if (nav) {
+  const home = nav.querySelector('a[href="/"]');
+  const companion = nav.querySelector('a[href="/moss-companion/"]');
+  const countdown = nav.querySelector('a[href="/moss-countdown/"]');
+  const humanBit = nav.querySelector('a[href="/about/"]');
+  const contact = nav.querySelector('a[href="/support/"]');
+  const privacy = nav.querySelector('a[href="/privacy/"]');
+
+  if (home && companion && countdown && humanBit && contact && privacy) {
+    const appsMenu = document.createElement('details');
+    appsMenu.className = 'apps-menu';
+    const summary = document.createElement('summary');
+    summary.textContent = 'Apps';
+    const dropdown = document.createElement('div');
+    dropdown.className = 'apps-dropdown';
+    const comingSoon = document.createElement('a');
+    comingSoon.href = '/coming-soon/';
+    comingSoon.textContent = 'Coming Soon';
+    dropdown.append(companion, countdown, comingSoon);
+    appsMenu.append(summary, dropdown);
+    nav.replaceChildren(home, appsMenu, humanBit, contact, privacy);
+  }
+}
+
 if (window.location.pathname === '/moss-countdown/') {
   const countdownLogo = document.querySelector('.detail-icon');
   if (countdownLogo) {
