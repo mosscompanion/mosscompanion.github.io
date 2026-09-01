@@ -21,9 +21,12 @@ document.querySelectorAll('.site-nav a[href="/"]').forEach((link) => {
   link.setAttribute('aria-label', 'Home');
   link.title = 'Home';
   const house = document.createElement('img');
-  house.src = '/assets/home-drawing.png';
+  house.src = '/assets/home-house.png';
   house.alt = '';
-  link.replaceChildren(house);
+  const label = document.createElement('span');
+  label.className = 'home-label';
+  label.textContent = 'Home';
+  link.replaceChildren(house, label);
 });
 
 if (nav) {
