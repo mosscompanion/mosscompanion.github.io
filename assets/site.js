@@ -41,7 +41,7 @@ if (nav) {
     const appsMenu = document.createElement('details');
     appsMenu.className = 'apps-menu';
     const summary = document.createElement('summary');
-    summary.textContent = 'Apps';
+    summary.textContent = 'The Apps';
     const dropdown = document.createElement('div');
     dropdown.className = 'apps-dropdown';
     const comingSoon = document.createElement('a');
