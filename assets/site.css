@@ -60,7 +60,7 @@ p { margin: 0 0 1rem; }
 .apps-dropdown a { padding: 8px 10px; border-radius: 10px; color: var(--brown); font-size: .9rem; font-weight: 600; text-decoration: none; }
 .apps-dropdown a:hover, .apps-dropdown a[aria-current='page'] { background: var(--sage); color: var(--green-dark); }
 .shell { width: min(calc(100% - 28px), var(--content)); margin-inline: auto; }
-.hero { padding: 64px 0 48px; }
+.hero { padding: 34px 0 20px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(120px, 37vw); grid-template-areas: 'heading art' 'lead lead'; column-gap: 12px; row-gap: 18px; align-items: center; }
 .hero-heading { grid-area: heading; }
 .hero-lead { grid-area: lead; }
@@ -79,6 +79,7 @@ p { margin: 0 0 1rem; }
 .button.secondary { background: transparent; color: var(--green-dark); }
 .button.disabled { border-color: #8a7d70; background: #8a7d70; cursor: default; }
 .section { padding: 54px 0; }
+#apps.section { padding-top: 26px; }
 .section-heading { max-width: 740px; margin-bottom: 26px; }
 .section-heading p { margin-top: 12px; font-size: 1.05rem; }
 .cards { display: grid; gap: 20px; }
@@ -117,6 +118,7 @@ p { margin: 0 0 1rem; }
   .apps-menu summary { padding: 8px 10px; font-size: .88rem; }
   .apps-dropdown { position: absolute; top: calc(100% + 8px); left: 0; }
   .hero { padding: 86px 0 70px; }
+  #apps.section { padding-top: 54px; }
   .hero-grid { grid-template-columns: 1.1fr .9fr; grid-template-areas: 'heading art' 'lead art'; column-gap: 36px; row-gap: 0; }
   .detail-grid { grid-template-columns: 1.1fr .9fr; }
   .cards.three { grid-template-columns: repeat(3, 1fr); }
