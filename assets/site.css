@@ -111,6 +111,18 @@ p { margin: 0 0 1rem; }
 .footer-links a { font-weight: 600; }
 .tiny { font-size: .86rem; opacity: .78; }
 
+@media (max-width: 739px) {
+  .home-page .hero { padding: 28px 0 14px; }
+  .home-page .hero-grid { row-gap: 10px; }
+  .home-page .hero-lead { margin-top: 0; }
+  .home-page #apps.section { padding: 18px 0 40px; }
+  .home-page .section-heading { margin-bottom: 20px; }
+  .home-page .section-heading p { margin-top: 10px; }
+  .home-page .cards,
+  .home-page .app-card { gap: 18px; }
+  .home-page .site-footer { margin-top: 40px; padding: 28px 0 38px; }
+}
+
 @media (min-width: 740px) {
   .menu-toggle { display: none; }
   .site-nav { position: static; display: flex; padding: 0; border: 0; background: transparent; box-shadow: none; }
