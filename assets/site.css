@@ -73,7 +73,9 @@ p { margin: 0 0 1rem; }
 .card:nth-child(2n) { background: #fbf2dc; }
 .app-card { display: grid; gap: 22px; }
 .app-card:nth-child(2n) { background: var(--paper); }
-.app-status { width: fit-content; min-height: 40px; margin: 10px 12px 0 0; padding: 7px 15px; }
+.app-card > div { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; }
+.app-status { width: fit-content; min-height: 40px; margin: auto 12px 0 0; padding: 7px 15px; }
+.app-card .text-link { margin-top: 12px; }
 .app-icon { width: 132px; height: 132px; padding: 0; border-radius: 30px; background: transparent; object-fit: cover; }
 .tag { display: inline-block; width: fit-content; margin-bottom: 12px; padding: 5px 11px; border-radius: 999px; background: var(--sage); color: var(--green-dark); font-size: .8rem; font-weight: 700; }
 .text-link { font-weight: 700; }
