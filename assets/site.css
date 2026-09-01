@@ -47,6 +47,9 @@ p { margin: 0 0 1rem; }
 .site-nav.open { display: grid; }
 .site-nav a { padding: 10px 12px; border-radius: 12px; color: var(--brown); font-weight: 600; text-decoration: none; }
 .site-nav a:hover, .site-nav a[aria-current='page'] { background: var(--sage); color: var(--green-dark); }
+.site-nav .home-link { display: inline-flex; align-items: center; padding: 3px 5px; background: transparent; }
+.site-nav .home-link:hover, .site-nav .home-link[aria-current='page'] { background: transparent; }
+.site-nav .home-link img { width: 48px; height: 28px; object-fit: contain; }
 .shell { width: min(calc(100% - 28px), var(--content)); margin-inline: auto; }
 .hero { padding: 64px 0 48px; }
 .hero-grid { display: grid; gap: 36px; align-items: center; }

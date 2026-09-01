@@ -16,6 +16,16 @@ document.querySelectorAll('.site-nav a[href="/about/"]').forEach((link) => {
   link.textContent = 'The Human Bit';
 });
 
+document.querySelectorAll('.site-nav a[href="/"]').forEach((link) => {
+  link.classList.add('home-link');
+  link.setAttribute('aria-label', 'Home');
+  link.title = 'Home';
+  const house = document.createElement('img');
+  house.src = '/assets/home-drawing.png';
+  house.alt = '';
+  link.replaceChildren(house);
+});
+
 if (window.location.pathname === '/moss-countdown/') {
   const countdownLogo = document.querySelector('.detail-icon');
   if (countdownLogo) {
