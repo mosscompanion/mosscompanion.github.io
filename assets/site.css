@@ -59,6 +59,8 @@ p { margin: 0 0 1rem; }
 .hero-art::before { width: 65%; height: 18%; left: -8%; top: 12%; }
 .hero-art::after { width: 48%; height: 14%; right: -5%; bottom: 10%; background: var(--pink); }
 .hero-art img { position: relative; z-index: 1; width: min(78%, 360px); filter: drop-shadow(0 18px 24px rgba(33,77,43,.2)); }
+.hero-art.character-art { border: 0; background: transparent; }
+.hero-art.character-art::before, .hero-art.character-art::after { display: none; }
 .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 11px 19px; border: 2px solid var(--green-dark); border-radius: 999px; background: var(--green-dark); color: white; font-size: 1.02rem; font-weight: 600; text-decoration: none; }
 .button.secondary { background: transparent; color: var(--green-dark); }
@@ -72,7 +74,7 @@ p { margin: 0 0 1rem; }
 .app-card { display: grid; gap: 22px; }
 .app-card:nth-child(2n) { background: var(--paper); }
 .app-status { width: fit-content; min-height: 40px; margin: 10px 12px 0 0; padding: 7px 15px; }
-.app-icon { width: 112px; height: 112px; padding: 7px; border-radius: 30px; background: #f4f0df; object-fit: contain; }
+.app-icon { width: 132px; height: 132px; padding: 0; border-radius: 30px; background: transparent; object-fit: cover; }
 .tag { display: inline-block; width: fit-content; margin-bottom: 12px; padding: 5px 11px; border-radius: 999px; background: var(--sage); color: var(--green-dark); font-size: .8rem; font-weight: 700; }
 .text-link { font-weight: 700; }
 .soft-panel { padding: clamp(28px, 6vw, 58px); border-radius: 36px; background: var(--green-dark); color: #fff9eb; }
