@@ -111,6 +111,10 @@ p { margin: 0 0 1rem; }
 .footer-links a { font-weight: 600; }
 .tiny { font-size: .86rem; opacity: .78; }
 
+.about-page .detail-hero { padding-bottom: 10px; }
+.about-page .detail-hero + .section { padding-top: 18px; }
+.about-page .prose > .lead:first-child { margin-top: 0; }
+
 @media (max-width: 739px) {
   .home-page .hero { padding: 28px 0 14px; }
   .home-page .hero-grid { row-gap: 10px; }
