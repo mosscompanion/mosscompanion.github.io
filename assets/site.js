@@ -44,6 +44,8 @@ if (nav) {
     const comingSoon = document.createElement('a');
     comingSoon.href = '/coming-soon/';
     comingSoon.textContent = 'Coming Soon';
+    addNavIcon(companion, 'Companion', '/assets/moss-companion.png');
+    addNavIcon(countdown, 'Countdown', '/assets/moss-countdown.png');
     dropdown.append(companion, countdown, comingSoon);
     appsMenu.append(summary, dropdown);
     nav.replaceChildren(home, appsMenu, humanBit, security, contact);
