@@ -51,7 +51,8 @@ p { margin: 0 0 1rem; }
 .apps-menu { position: relative; }
 .apps-menu summary { display: flex; align-items: center; gap: 7px; padding: 10px 12px; border-radius: 12px; color: var(--brown); cursor: pointer; font-weight: 600; list-style: none; }
 .apps-menu summary::-webkit-details-marker { display: none; }
-.apps-menu summary::after { content: '⌄'; margin-left: 5px; color: var(--green); }
+.apps-menu summary::after { content: ''; width: 18px; height: 18px; margin-left: 3px; background: url('/assets/nav-plus.png') center / contain no-repeat; }
+.apps-menu[open] summary::after { background-image: url('/assets/nav-minus.png'); }
 .apps-menu[open] summary, .apps-menu summary:hover { background: var(--sage); color: var(--green-dark); }
 .apps-dropdown { display: grid; gap: 3px; min-width: 172px; padding: 8px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: var(--shadow); }
 .apps-dropdown a { padding: 8px 10px; border-radius: 10px; color: var(--brown); font-size: .9rem; font-weight: 600; text-decoration: none; }
