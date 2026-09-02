@@ -44,8 +44,8 @@ if (nav) {
     const comingSoon = document.createElement('a');
     comingSoon.href = '/coming-soon/';
     comingSoon.textContent = 'Coming Soon';
-    addNavIcon(companion, 'Companion', '/assets/moss-companion-transparent.png');
-    addNavIcon(countdown, 'Countdown', '/assets/moss-countdown-transparent.png');
+    addNavIcon(companion, 'Companion', '/assets/moss-companion-transparent-hq.png');
+    addNavIcon(countdown, 'Countdown', '/assets/moss-countdown-transparent-hq.png');
     dropdown.append(companion, countdown, comingSoon);
     appsMenu.append(summary, dropdown);
     nav.replaceChildren(home, appsMenu, humanBit, security, contact);
@@ -55,7 +55,7 @@ if (nav) {
 if (window.location.pathname === '/moss-countdown/') {
   const countdownLogo = document.querySelector('.detail-icon');
   if (countdownLogo) {
-    countdownLogo.src = '/assets/moss-countdown-transparent.png';
+    countdownLogo.src = '/assets/moss-countdown-transparent-hq.png';
     countdownLogo.alt = 'MOSS Countdown logo';
   }
 
@@ -72,7 +72,7 @@ if (window.location.pathname === '/moss-countdown/') {
 if (window.location.pathname === '/moss-companion/') {
   const companionLogo = document.querySelector('.detail-icon');
   if (companionLogo) {
-    companionLogo.src = '/assets/moss-companion-transparent.png';
+    companionLogo.src = '/assets/moss-companion-transparent-hq.png';
     companionLogo.alt = 'MOSS Companion logo';
   }
 
