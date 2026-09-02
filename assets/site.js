@@ -55,8 +55,8 @@ if (nav) {
 if (window.location.pathname === '/moss-countdown/') {
   const countdownLogo = document.querySelector('.detail-icon');
   if (countdownLogo) {
-    countdownLogo.src = '/assets/moss-mark.png';
-    countdownLogo.alt = 'MOSS logo';
+    countdownLogo.src = '/assets/moss-countdown-transparent.png';
+    countdownLogo.alt = 'MOSS Countdown logo';
   }
 
   const playButton = document.querySelector('.button-row a[href*="play.google.com"]');
@@ -72,8 +72,8 @@ if (window.location.pathname === '/moss-countdown/') {
 if (window.location.pathname === '/moss-companion/') {
   const companionLogo = document.querySelector('.detail-icon');
   if (companionLogo) {
-    companionLogo.src = '/assets/moss-mark.png';
-    companionLogo.alt = 'MOSS logo';
+    companionLogo.src = '/assets/moss-companion-transparent.png';
+    companionLogo.alt = 'MOSS Companion logo';
   }
 
   const status = document.querySelector('.button.disabled[aria-label*="Google Play"]');
