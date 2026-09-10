@@ -4,7 +4,7 @@
   "description": "Small, useful apps for real life.",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#f7f4e8",
   "theme_color": "#174d31",
   "icons": [
