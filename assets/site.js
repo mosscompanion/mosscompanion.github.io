@@ -26,6 +26,7 @@ if (nav) {
   const home = nav.querySelector('a[href="/"]');
   const companion = nav.querySelector('a[href="/moss-companion/"]');
   const countdown = nav.querySelector('a[href="/moss-countdown/"]');
+  const lists = nav.querySelector('a[href="/moss-lists/"]');
   const humanBit = nav.querySelector('a[href="/about/"]');
   const security = nav.querySelector('a[href="/privacy/"]');
   const contact = nav.querySelector('a[href="/support/"]');
@@ -47,6 +48,10 @@ if (nav) {
     addNavIcon(companion, 'Companion', '/assets/moss-companion-transparent-hq.png');
     addNavIcon(countdown, 'Countdown', '/assets/moss-countdown-transparent-hq.png');
     dropdown.append(companion, countdown, comingSoon);
+    if (lists) {
+      addNavIcon(lists, 'Lists', '/assets/moss-lists.png');
+      dropdown.insertBefore(lists, comingSoon);
+    }
     appsMenu.append(summary, dropdown);
     nav.replaceChildren(home, appsMenu, humanBit, security, contact);
   }

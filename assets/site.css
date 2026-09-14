@@ -164,6 +164,8 @@ p { margin: 0 0 1rem; }
   .hero-grid { grid-template-columns: 1.1fr .9fr; grid-template-areas: 'heading art' 'lead art'; column-gap: 36px; row-gap: 0; }
   .detail-grid { grid-template-columns: 1.1fr .9fr; }
   .cards.three { grid-template-columns: repeat(3, 1fr); }
+  .app-family .app-card { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .app-family .app-card h3 { margin-bottom: 12px; }
   .cards.three.dog-cards { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr auto; align-items: end; }
 }
@@ -175,6 +177,7 @@ p { margin: 0 0 1rem; }
   .cards.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
   .cards.three.dog-cards { grid-template-columns: repeat(3, 1fr); }
   .app-card { grid-template-columns: auto 1fr; }
+  .app-family .app-card { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
