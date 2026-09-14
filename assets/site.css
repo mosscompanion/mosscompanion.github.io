@@ -102,6 +102,7 @@ p { margin: 0 0 1rem; }
 .soft-panel { padding: clamp(28px, 6vw, 58px); border-radius: 36px; background: var(--green-dark); color: #fff9eb; }
 .soft-panel h2, .soft-panel a { color: #fff9eb; }
 .soft-panel p { max-width: 760px; margin-top: 16px; }
+.tester-invite .button { margin-top: 10px; }
 .detail-hero { padding: 56px 0 24px; }
 .detail-grid { display: grid; gap: 28px; align-items: center; }
 .detail-icon { width: min(58vw, 250px); margin: auto; }
