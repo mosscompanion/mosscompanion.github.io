@@ -49,7 +49,7 @@ if (nav) {
     addNavIcon(countdown, 'Countdown', '/assets/moss-countdown-transparent-hq.png');
     dropdown.append(companion, countdown, comingSoon);
     if (lists) {
-      addNavIcon(lists, 'Lists', '/assets/moss-lists.png');
+      addNavIcon(lists, 'Lists', '/assets/moss-lists-transparent.png');
       dropdown.insertBefore(lists, comingSoon);
     }
     appsMenu.append(summary, dropdown);
