@@ -137,6 +137,7 @@ p { margin: 0 0 1rem; }
 .dog-details div { display: grid; grid-template-columns: auto 1fr; gap: 6px; }
 .dog-details dt { font-weight: 700; }
 .dog-details dd { margin: 0; }
+.dog-job-title { white-space: nowrap; font-size: clamp(.64rem, 2.55vw, 1rem); letter-spacing: -.025em; }
 .dog-list { margin: 12px 0 0; font-size: .92rem; }
 .site-footer { margin-top: 56px; padding: 34px 0 50px; border-top: 1px solid var(--line); }
 .footer-grid { display: grid; gap: 22px; }
