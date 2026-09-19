@@ -135,7 +135,7 @@ p { margin: 0 0 1rem; }
 .gobi-nicknames { display: grid; gap: 1px; font-size: clamp(.58rem, 2.2vw, .93rem); line-height: 1.45; }
 .gobi-nicknames span { white-space: nowrap; }
 .dog-details { display: grid; gap: 5px; margin: 0 0 16px; }
-.dog-details div { display: grid; grid-template-columns: auto 1fr; gap: 6px; }
+.dog-details div { display: grid; grid-template-columns: auto 1fr; gap: 6px; align-items: baseline; }
 .dog-details dt { font-weight: 700; }
 .dog-details dd { margin: 0; }
 .dog-job-title { white-space: nowrap; font-size: clamp(.72rem, 2.55vw, 1rem); letter-spacing: -.04em; }
