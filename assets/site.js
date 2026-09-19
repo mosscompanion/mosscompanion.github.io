@@ -45,13 +45,10 @@ if (nav) {
     const comingSoon = document.createElement('a');
     comingSoon.href = '/coming-soon/';
     comingSoon.textContent = 'Coming Soon';
-    addNavIcon(companion, 'Companion', '/assets/moss-companion-transparent-hq.png');
+    // Only publicly released apps appear in this menu. Unreleased app pages
+    // remain linked from the Coming Soon page until their release status changes.
     addNavIcon(countdown, 'Countdown', '/assets/moss-countdown-transparent-hq.png');
-    dropdown.append(companion, countdown, comingSoon);
-    if (lists) {
-      addNavIcon(lists, 'Lists', '/assets/moss-lists-transparent.png');
-      dropdown.insertBefore(lists, comingSoon);
-    }
+    dropdown.append(countdown, comingSoon);
     appsMenu.append(summary, dropdown);
     nav.replaceChildren(home, appsMenu, humanBit, security, contact);
   }
