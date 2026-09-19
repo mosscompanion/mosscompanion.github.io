@@ -131,6 +131,8 @@ p { margin: 0 0 1rem; }
 .dog-card:nth-child(2) .dog-photo-frame { background: var(--pink); }
 .dog-card:nth-child(3) .dog-photo-frame { background: var(--yellow); }
 .dog-role { margin: 8px 0 14px; color: var(--green); font-weight: 700; }
+.gobi-name { white-space: nowrap; font-size: clamp(1.58rem, 6.5vw, 2.65rem); }
+.gobi-nicknames { display: grid; gap: 1px; font-size: clamp(.72rem, 2.4vw, .93rem); line-height: 1.45; }
 .dog-details { display: grid; gap: 5px; margin: 0 0 16px; }
 .dog-details div { display: grid; grid-template-columns: auto 1fr; gap: 6px; }
 .dog-details dt { font-weight: 700; }
