@@ -33,7 +33,7 @@ if (nav) {
 
   if (home && companion && countdown && humanBit && security && contact) {
     addNavIcon(home, 'Home', '/assets/nav-home.png');
-    addNavIcon(humanBit, 'The Human Bit', '/assets/nav-human.png');
+    addNavIcon(humanBit, 'About MOSS', '/assets/nav-human.png');
     addNavIcon(security, 'Security', '/assets/nav-security.png');
     addNavIcon(contact, 'Contact', '/assets/nav-contact.png');
     const appsMenu = document.createElement('details');
@@ -99,14 +99,47 @@ document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = String(new Date().getFullYear());
 });
 
+const formatDogAge = (birthDate, today = new Date()) => {
+  const years = today.getFullYear() - birthDate.getFullYear();
+  const birthdayThisYear = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  const hasHadBirthday = today >= birthdayThisYear;
+  const completedYears = hasHadBirthday ? years : years - 1;
+
+  if (completedYears < 1) return 'Nearly One';
+  if (completedYears === 1) return 'One';
+  return `${completedYears} years old`;
+};
+
 document.querySelectorAll('[data-birth-date]').forEach((node) => {
-  const today = new Date();
-  const birthDate = new Date(`${node.dataset.birthDate}T00:00:00`);
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const birthdayHasPassed = today.getMonth() > birthDate.getMonth()
-    || (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
-  if (!birthdayHasPassed) age -= 1;
-  node.textContent = age < 1 ? 'Not even one' : `${age} years old`;
+  const [year, month, day] = node.dataset.birthDate.split('-').map(Number);
+  node.textContent = formatDogAge(new Date(year, month - 1, day));
+});
+
+const contactDrafts = {
+  'App Support': (product) => ({
+    subject: product === 'General Support' ? 'General Support' : `${product} - App Support`,
+    body: `Hi Katie,\n\nI need some help with ${product === 'General Support' ? 'something MOSS-related' : product}.\n\nWhat I need help with:\n\nWhat I was trying to do:\n\nWhat happened:\n\nMy phone / Android version (if known):\n\nThanks!`,
+  }),
+  'Bug Report': (product) => ({
+    subject: `${product} - Bug Report`,
+    body: `Hi Katie,\n\nI found a problem with ${product}.\n\nWhat I was doing:\n\nWhat I expected to happen:\n\nWhat happened instead:\n\nMy phone / Android version and app version (if known):\n\nScreenshot or screen recording attached (if I have one):\n\nThanks!`,
+  }),
+  Feedback: (product) => ({
+    subject: `${product} - Feedback`,
+    body: `Hi Katie,\n\nI have some feedback about ${product}.\n\nWhat I like / what is working well:\n\nWhat I would change or add:\n\nAnything else that would help explain it:\n\nThanks!`,
+  }),
+};
+
+document.querySelectorAll('[data-contact-card]').forEach((card) => {
+  const type = card.dataset.contactCard;
+  const select = card.querySelector('select');
+  const button = card.querySelector('[data-contact-continue]');
+  if (!select || !button || !contactDrafts[type]) return;
+
+  button.addEventListener('click', () => {
+    const draft = contactDrafts[type](select.value);
+    window.location.href = `mailto:hello@madebymoss.co.uk?subject=${encodeURIComponent(draft.subject)}&body=${encodeURIComponent(draft.body)}`;
+  });
 });
 
 document.querySelectorAll('[data-copy-email]').forEach((button) => {
