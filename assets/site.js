@@ -60,15 +60,6 @@ if (window.location.pathname === '/moss-countdown/') {
     countdownLogo.src = '/assets/moss-countdown-transparent-hq.png';
     countdownLogo.alt = 'MOSS Countdown logo';
   }
-
-  const playButton = document.querySelector('.button-row a[href*="play.google.com"]');
-  if (playButton) {
-    const status = document.createElement('span');
-    status.className = 'button disabled';
-    status.setAttribute('aria-label', 'MOSS Countdown is coming sooner');
-    status.textContent = 'Coming sooner!';
-    playButton.replaceWith(status);
-  }
 }
 
 if (window.location.pathname === '/moss-companion/') {
