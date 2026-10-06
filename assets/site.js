@@ -12,49 +12,6 @@ if (headerBrand) {
   headerBrand.append(words, logo);
 }
 
-const addNavIcon = (element, labelText, iconSrc) => {
-  const icon = document.createElement('img');
-  icon.className = 'nav-item-icon';
-  icon.src = iconSrc;
-  icon.alt = '';
-  const label = document.createElement('span');
-  label.textContent = labelText;
-  element.replaceChildren(icon, label);
-};
-
-if (nav) {
-  const home = nav.querySelector('a[href="/"]');
-  const companion = nav.querySelector('a[href="/moss-companion/"]');
-  const countdown = nav.querySelector('a[href="/moss-countdown/"]');
-  const lists = nav.querySelector('a[href="/moss-lists/"]');
-  const humanBit = nav.querySelector('a[href="/about/"]');
-  const security = nav.querySelector('a[href="/privacy/"]');
-  const contact = nav.querySelector('a[href="/support/"]');
-
-  if (home && companion && countdown && lists && humanBit && security && contact) {
-    addNavIcon(home, 'Home', '/assets/nav-home.png');
-    addNavIcon(humanBit, 'About MOSS', '/assets/nav-human.png');
-    addNavIcon(security, 'Security', '/assets/nav-security.png');
-    addNavIcon(contact, 'Contact', '/assets/nav-contact.png');
-    const appsMenu = document.createElement('details');
-    appsMenu.className = 'apps-menu';
-    const summary = document.createElement('summary');
-    addNavIcon(summary, 'The Apps', '/assets/nav-apps.png');
-    const dropdown = document.createElement('div');
-    dropdown.className = 'apps-dropdown';
-    const comingSoon = document.createElement('a');
-    comingSoon.href = '/coming-soon/';
-    comingSoon.textContent = 'Coming Soon';
-    // Only publicly released apps appear in this menu. Unreleased app pages
-    // remain linked from the Coming Soon page until their release status changes.
-    addNavIcon(countdown, 'Countdown', '/assets/moss-countdown-transparent-hq.png');
-    addNavIcon(lists, 'Lists', '/assets/moss-lists-transparent.png');
-    dropdown.append(countdown, lists, comingSoon);
-    appsMenu.append(summary, dropdown);
-    nav.replaceChildren(home, appsMenu, humanBit, security, contact);
-  }
-}
-
 if (window.location.pathname === '/moss-countdown/') {
   const countdownLogo = document.querySelector('.detail-icon');
   if (countdownLogo) {
