@@ -31,7 +31,7 @@ if (nav) {
   const security = nav.querySelector('a[href="/privacy/"]');
   const contact = nav.querySelector('a[href="/support/"]');
 
-  if (home && companion && countdown && humanBit && security && contact) {
+  if (home && companion && countdown && lists && humanBit && security && contact) {
     addNavIcon(home, 'Home', '/assets/nav-home.png');
     addNavIcon(humanBit, 'About MOSS', '/assets/nav-human.png');
     addNavIcon(security, 'Security', '/assets/nav-security.png');
@@ -48,7 +48,8 @@ if (nav) {
     // Only publicly released apps appear in this menu. Unreleased app pages
     // remain linked from the Coming Soon page until their release status changes.
     addNavIcon(countdown, 'Countdown', '/assets/moss-countdown-transparent-hq.png');
-    dropdown.append(countdown, comingSoon);
+    addNavIcon(lists, 'Lists', '/assets/moss-lists-transparent.png');
+    dropdown.append(countdown, lists, comingSoon);
     appsMenu.append(summary, dropdown);
     nav.replaceChildren(home, appsMenu, humanBit, security, contact);
   }
