@@ -27,11 +27,6 @@ if (window.location.pathname === '/moss-companion/') {
     companionLogo.alt = 'MOSS Companion logo';
   }
 
-  const status = document.querySelector('.button.disabled[aria-label*="Google Play"]');
-  if (status) {
-    status.setAttribute('aria-label', 'MOSS Companion is coming soon');
-    status.textContent = 'Coming soon';
-  }
 }
 
 if (toggle && nav) {
