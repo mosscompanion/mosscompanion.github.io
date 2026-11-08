@@ -1,0 +1,17 @@
+{
+  "name": "MOSS ESSA",
+  "short_name": "MOSS ESSA",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#fff7e7",
+  "theme_color": "#4c4034",
+  "description": "A private journal and catalogue for emotional support stuffed animals.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
