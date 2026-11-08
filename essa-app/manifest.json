@@ -1,6 +1,7 @@
 {
   "name": "MOSS ESSA",
   "short_name": "MOSS ESSA",
+  "id": "/essa-app/",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
@@ -9,8 +10,13 @@
   "description": "A private journal and catalogue for emotional support stuffed animals.",
   "icons": [
     {
-      "src": "icon.png",
-      "sizes": "any",
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
