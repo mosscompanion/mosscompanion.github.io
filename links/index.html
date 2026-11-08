@@ -11,28 +11,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Lexend:wght@400;500&display=swap">
   <link rel="stylesheet" href="/moss-links/style.css?v=essa-web-link">
+  <script defer src="/links/click-counts.js" data-endpoint="https://script.google.com/macros/s/AKfycbwk-uibrnUHkW2_eJIzuGPJvPaQDGOYrbiy3RfR7coM2qBiumZAHVL6nljZy02fupesJA/exec"></script>
 </head>
 <body>
   <main class="garden">
     <header class="intro">
-      <h1><a class="header-link" href="https://madebymoss.co.uk/">Made by <img class="logo" src="/moss-links/assets/moss-logo.png" alt="MOSS" width="120" height="120"><img class="header-link-icon" src="/moss-links/assets/link.png" alt="" aria-hidden="true" width="20" height="20"></a></h1>
+      <h1><a class="header-link" data-click-id="home" href="https://madebymoss.co.uk/">Made by <img class="logo" src="/moss-links/assets/moss-logo.png" alt="MOSS" width="120" height="120"><img class="header-link-icon" src="/moss-links/assets/link.png" alt="" aria-hidden="true" width="20" height="20"></a></h1>
     </header>
 
     <section aria-labelledby="apps">
       <h2 id="apps">Apps on Google Play</h2>
       <ul class="app-list">
-        <!-- Add new releases by copying one list item and updating its link, icon and name. -->
+        <!-- Give new links a unique data-click-id and add it to the click counter's allowlist. -->
         <li class="essa-card">
-          <a class="link" href="https://play.google.com/store/apps/details?id=com.moss.moss_essa">
+          <a class="link" data-click-id="essa-play" href="https://play.google.com/store/apps/details?id=com.moss.moss_essa">
             <img src="/moss-links/assets/essa.png" alt="" width="48" height="48">
             <span class="link-name">MOSS ESSA</span>
             <img class="arrow" src="/moss-links/assets/link.png" alt="" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;border-radius:0">
             <small class="app-description">Organise your Emotional Support Stuffed Animals and create custom ID badges &amp; tags.</small>
           </a>
-          <a class="web-link" href="https://madebymoss.co.uk/essa-app/"><img src="/moss-links/assets/link.png" alt="" width="20" height="20">MOSS ESSA - Web version</a>
+          <a class="web-link" data-click-id="essa-web" href="https://madebymoss.co.uk/essa-app/"><img src="/moss-links/assets/link.png" alt="" width="20" height="20">MOSS ESSA - Web version</a>
         </li>
         <li>
-          <a class="link" href="https://play.google.com/store/apps/details?id=com.moss.moss_companion">
+          <a class="link" data-click-id="companion-play" href="https://play.google.com/store/apps/details?id=com.moss.moss_companion">
             <img src="/moss-links/assets/companion.png" alt="" width="48" height="48">
             <span class="link-name">MOSS Companion</span>
             <img class="arrow" src="/moss-links/assets/link.png" alt="" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;border-radius:0">
@@ -40,7 +41,7 @@
           </a>
         </li>
         <li>
-          <a class="link" href="https://play.google.com/store/apps/details?id=com.moss.moss_countdown">
+          <a class="link" data-click-id="countdown-play" href="https://play.google.com/store/apps/details?id=com.moss.moss_countdown">
             <img src="/moss-links/assets/countdown.png" alt="" width="48" height="48">
             <span class="link-name">MOSS Countdown</span>
             <img class="arrow" src="/moss-links/assets/link.png" alt="" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;border-radius:0">
@@ -48,7 +49,7 @@
           </a>
         </li>
         <li>
-          <a class="link" href="https://play.google.com/store/apps/details?id=com.moss.moss_lists">
+          <a class="link" data-click-id="lists-play" href="https://play.google.com/store/apps/details?id=com.moss.moss_lists">
             <img src="/moss-links/assets/lists.png" alt="" width="48" height="48">
             <span class="link-name">MOSS Lists</span>
             <img class="arrow" src="/moss-links/assets/link.png" alt="" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;border-radius:0">
