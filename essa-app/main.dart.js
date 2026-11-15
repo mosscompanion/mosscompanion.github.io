@@ -135212,7 +135212,7 @@ return A.k($async$w4,r)},
 m(){var s=this.Q
 if(s!=null)s.b5()
 this.az()},
-u(a){var s,r,q,p=this,o=null,n="MOSS ESSA",m=p.f
+u(a){var s,r,q,p=this,o=null,n="MOSS ESSA Web App",m=p.f
 if(m!=null)return new A.Ku(p,m,o)
 s=A.bMJ(B.Or)
 r=A.cP(u.v,B.J,o,o,o,o,!1,o,o,!1,100,o,B.at,o,100)
@@ -137217,7 +137217,7 @@ $2(a,b){var s,r,q=A.d_(B.wY,t.Au)
 q.F(0,B.dG)
 s=this.a
 r=s.e
-return A.bH5(new A.aHn(s),!1,new A.a_0(new A.NH(s.c,s.d,r,s.f,null),null),B.zc.aX9(q),A.bMJ(r.c),"MOSS ESSA")},
+return A.bH5(new A.aHn(s),!1,new A.a_0(new A.NH(s.c,s.d,r,s.f,null),null),B.zc.aX9(q),A.bMJ(r.c),"MOSS ESSA Web App")},
 $S:709}
 A.aHn.prototype={
 $2(a,b){var s=null,r=A.bm(a,B.WK,t.w).w.w,q=A.ap_(a)==null?1/0:800,p=this.a.e.c,o=A.cy(r.d,B.bSz,s,s,0,0,r.b,s)

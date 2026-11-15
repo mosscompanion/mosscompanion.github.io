@@ -1,6 +1,6 @@
 {
-  "name": "MOSS ESSA",
-  "short_name": "MOSS ESSA",
+  "name": "MOSS ESSA Web App",
+  "short_name": "MOSS ESSA Web App",
   "id": "/essa-app/",
   "start_url": ".",
   "scope": ".",

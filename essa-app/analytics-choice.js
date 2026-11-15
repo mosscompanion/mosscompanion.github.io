@@ -13,7 +13,7 @@
     function gtag() { window.dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', measurement, {
-      page_title: 'MOSS ESSA Web',
+      page_title: 'MOSS ESSA Web App',
       page_location: 'https://madebymoss.co.uk/essa-app/',
       page_referrer: '',
       allow_google_signals: false,
