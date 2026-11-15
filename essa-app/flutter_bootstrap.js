@@ -37,7 +37,7 @@ _flutter.buildConfig = {"engineRevision":"83675ed27633283e7fc296c8bca22e841224c0
 
 
 // GitHub Pages caches static files. Couple the entrypoint URL to this build.
-const mossBuild = "3477094296" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */;
+const mossBuild = "527553919" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */;
 for (const build of _flutter.buildConfig.builds) {
   if (build.mainJsPath) build.mainJsPath += `?v=${mossBuild}`;
 }
