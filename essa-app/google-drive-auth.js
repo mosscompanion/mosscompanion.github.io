@@ -8,7 +8,7 @@ window.mossAcquireJournalLock = (account) => new Promise((resolve, reject) => {
   }
   navigator.locks.request(`moss-essa-journal-${account}`, {ifAvailable: true}, (lock) => {
     if (!lock) {
-      reject(new Error('Your journal is already open in another tab. Close that tab and try again.'));
+      reject(new Error('Your journal is already open in another tab or window. Use that window, or close it and try opening the journal here again.'));
       return;
     }
     return new Promise((release) => {
@@ -29,24 +29,58 @@ window.mossGoogleConnect = (hint) => new Promise((resolve, reject) => {
     reject(new Error('Google sign-in is still loading. Please try again in a moment.'));
     return;
   }
-  const scopes = 'openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/drive.appdata';
-  const client = oauth.initTokenClient({
-    client_id: '439115440367-rvi9v9g6csqgdrvm1qa8n9lpv618mdat.apps.googleusercontent.com',
-    scope: scopes,
-    include_granted_scopes: false,
-    login_hint: hint || undefined,
-    callback: (response) => {
-      if (response.error || !oauth.hasGrantedAllScopes(response, ...scopes.split(' '))) {
-        reject(new Error('Google Drive permission is needed to open your journal.'));
-        return;
-      }
-      resolve({access_token: response.access_token, expires_in: Number(response.expires_in)});
-    },
-    error_callback: (error) => reject(new Error(
-      error.type === 'popup_closed'
-        ? 'Sign-in was cancelled. You can try again whenever you are ready.'
-        : 'Google could not open its sign-in window. Please allow pop-ups for this website and try again.'
-    )),
-  });
-  client.requestAccessToken({prompt: hint ? '' : 'select_account'});
+  const emailScope = 'https://www.googleapis.com/auth/userinfo.email';
+  const driveScope = 'https://www.googleapis.com/auth/drive.appdata';
+  const fail = (message) => {
+    clearTimeout(timeout);
+    reject(new Error(message));
+  };
+  const timeout = setTimeout(() => {
+    fail('Google did not finish signing in. Close its sign-in window and try again.');
+  }, 180_000);
+
+  try {
+    const client = oauth.initTokenClient({
+      client_id: '439115440367-rvi9v9g6csqgdrvm1qa8n9lpv618mdat.apps.googleusercontent.com',
+      scope: `openid ${emailScope} ${driveScope}`,
+      include_granted_scopes: false,
+      login_hint: hint || undefined,
+      callback: (response) => {
+        if (response.error) {
+          fail(response.error === 'access_denied'
+            ? 'Google access was declined. Allow access to open your journal.'
+            : 'Google could not authorise this sign-in. Please try again.');
+          return;
+        }
+        const granted = new Set((response.scope || '').split(/\s+/));
+        if (!granted.has(driveScope)) {
+          fail('Google Drive permission is needed to open your journal.');
+          return;
+        }
+        const expiresIn = Number(response.expires_in);
+        if (typeof response.access_token !== 'string' || !response.access_token ||
+            !Number.isSafeInteger(expiresIn) || expiresIn <= 0) {
+          fail('Google returned an incomplete sign-in. Please try again.');
+          return;
+        }
+        clearTimeout(timeout);
+        resolve({access_token: response.access_token, expires_in: expiresIn});
+      },
+      error_callback: (error) => {
+        switch (error.type) {
+          case 'popup_closed':
+            fail('Google sign-in was cancelled. You can try again when you are ready.');
+            break;
+          case 'popup_failed_to_open':
+            fail('Google could not open its sign-in window. Allow pop-ups for this website and try again.');
+            break;
+          default:
+            fail('Google could not finish signing in. Please try again.');
+        }
+      },
+    });
+    client.requestAccessToken({prompt: hint ? '' : 'select_account'});
+  } catch (_) {
+    fail('Google could not start signing in. Please try again.');
+  }
 });
