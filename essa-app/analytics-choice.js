@@ -59,7 +59,7 @@
   panel.style.cssText = 'max-width:380px;width:calc(100% - 64px);border:1px solid #d6cabb;border-radius:16px;padding:22px;background:#fffcf5;color:#332a23;font:16px/1.5 system-ui;';
   panel.innerHTML = '<h2 id="moss-analytics-title" style="margin:0 0 10px;font-size:21px">Optional visit statistics</h2>' +
     '<p>May MOSS use Google Analytics to count visits to this web app? It is off unless you allow it. Google receives visit and device information and uses analytics cookies.</p>' +
-    '<p>Your journal text, ESSA names, photos and Google account details are not sent to Analytics. Advertising features are disabled. The journal works the same either way.</p>' +
+    '<p>Your entries, ESSA names, photos and Google account details are not sent to Analytics. Advertising features are disabled. The app works the same either way.</p>' +
     '<p>You can change your choice in Settings → Google Drive &amp; backups → Web analytics privacy.</p>' +
     '<p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google privacy information</a></p>' +
     '<div style="display:flex;gap:12px;flex-wrap:wrap"><button type="button" data-choice="declined">No thanks</button><button type="button" data-choice="allowed">Allow analytics</button></div>';

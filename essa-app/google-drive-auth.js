@@ -3,12 +3,12 @@
 let releaseJournalLock;
 window.mossAcquireJournalLock = (account) => new Promise((resolve, reject) => {
   if (!navigator.locks) {
-    reject(new Error('This browser cannot safely open the Drive journal. Please use a current version of Chrome, Edge, Firefox or Safari.'));
+    reject(new Error('This browser cannot safely open MOSS ESSA. Please use a current version of Chrome, Edge, Firefox or Safari.'));
     return;
   }
   navigator.locks.request(`moss-essa-journal-${account}`, {ifAvailable: true}, (lock) => {
     if (!lock) {
-      reject(new Error('Your journal is already open in another tab or window. Use that window, or close it and try opening the journal here again.'));
+      reject(new Error('MOSS ESSA is already open for this account in another tab or window. Use that window, or close it and try opening the app here again.'));
       return;
     }
     return new Promise((release) => {
@@ -48,13 +48,13 @@ window.mossGoogleConnect = (hint) => new Promise((resolve, reject) => {
       callback: (response) => {
         if (response.error) {
           fail(response.error === 'access_denied'
-            ? 'Google access was declined. Allow access to open your journal.'
+            ? 'Google access was declined. Allow access to open MOSS ESSA.'
             : 'Google could not authorise this sign-in. Please try again.');
           return;
         }
         const granted = new Set((response.scope || '').split(/\s+/));
         if (!granted.has(driveScope)) {
-          fail('Google Drive permission is needed to open your journal.');
+          fail('Google Drive permission is needed to open MOSS ESSA.');
           return;
         }
         const expiresIn = Number(response.expires_in);
