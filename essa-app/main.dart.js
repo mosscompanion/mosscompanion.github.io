@@ -141299,7 +141299,7 @@ case 2:p=b
 if(p!=null&&q.c!=null)q.q(new A.b_4(q,p))
 return A.j(null,r)}})
 return A.k($async$O6,r)},
-t(a){var s,r,q=this,p=null,o=u.R,n="assets/settings/Colour_Icons/exit.png",m="assets/settings/Colour_Icons/image.png",l="assets/settings/Colour_Icons/edit.png",k=q.y,j=t.p,i=A.aC(A.b([A.aG(p,p,p,A.dD(o,p,o,88,B.F,p,p,p,p,28,p),p,p,p,q.gqv(),p,p,p,"Save gear category",p),A.aG(p,p,p,A.dD(n,p,n,88,B.F,p,p,p,p,28,p),p,p,p,q.gb0a(),p,p,p,"Exit gear category",p)],j),B.A,p,B.dZ,B.w,0,p)
+t(a){var s,r,q=this,p=null,o="assets/settings/Colour_Icons/exit.png",n=u.R,m="assets/settings/Colour_Icons/image.png",l="assets/settings/Colour_Icons/edit.png",k=q.y,j=t.p,i=A.aC(A.b([A.aG(p,p,p,A.dD(o,p,o,88,B.F,p,p,p,p,28,p),p,p,p,q.gb0a(),p,p,p,"Exit gear category",p),A.aG(p,p,p,A.dD(n,p,n,88,B.F,p,p,p,p,28,p),p,p,p,q.gqv(),p,p,p,"Save gear category",p)],j),B.A,p,B.dZ,B.w,0,p)
 i=A.a4(A.b([i,A.B(q.a.e==null?"New gear category":"Edit gear category",p,p,p,p,p,p,p,p,p)],j),B.at,p,B.t,B.w,B.z)
 if(q.gv2()==null)s=A.dD(m,p,m,88,B.F,p,p,p,p,48,p)
 else{s=q.gv2()
