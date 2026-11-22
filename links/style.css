@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+  --cream: #fcf8ed;
+  --paper: #fffef9;
+  --brown: #513e32;
+  --green: #214d2b;
+  --line: #d8cebf;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: clamp(16px, 5vw, 48px) 8px;
+  background: var(--cream);
+  color: var(--brown);
+  font: 400 1rem/1.5 Lexend, system-ui, sans-serif;
+}
+.garden {
+  --inset: clamp(13px, 4vw, 26px);
+  --radius: clamp(28px, 8vw, 52px);
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 640px);
+  margin-inline: auto;
+  padding: 0 var(--inset);
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, #a29277, #b2a386 .85%, var(--cream) 1.15% 98.85%, #b2a386 99.15%, #a29277);
+  background-size: 100% calc(100% - 2 * var(--radius));
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 12px 32px #51382c18;
+  overflow: hidden;
+}
+.garden::before, .garden::after {
+  content: "";
+  background: url("assets/garden-frame.png") top center / 100% auto no-repeat;
+  pointer-events: none;
+}
+.garden::before { position: absolute; z-index: -1; inset: 0 0 auto; aspect-ratio: 4 / 1; }
+.garden::after {
+  display: block;
+  background-position: bottom center;
+  aspect-ratio: 6 / 1;
+  margin-inline: calc(-1 * var(--inset));
+}
+.intro { display: grid; place-items: center; aspect-ratio: 3.8 / 1; margin-bottom: 10px; }
+h1 { margin: 0; font: 600 clamp(2rem, 9vw, 4rem)/1 Fredoka, system-ui, sans-serif; }
+.header-link { display: flex; align-items: center; justify-content: center; gap: clamp(12px, 4vw, 24px); color: var(--green); text-decoration: none; border-radius: 12px; }
+.logo { display: block; width: clamp(60px, 17vw, 110px); height: auto; filter: drop-shadow(0 4px 6px #214d2b25); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.app-list { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(9px, 2.4vw, 16px); }
+.app-card { position: relative; padding: clamp(11px, 3.3vw, 22px); border: 1px solid var(--line); border-radius: clamp(17px, 4.5vw, 28px); background: var(--paper); }
+.card-heading { display: flex; align-items: center; gap: clamp(7px, 2vw, 13px); min-height: clamp(42px, 11.5vw, 72px); padding-right: clamp(78px, 22vw, 140px); }
+.app-icon { display: block; flex: 0 0 auto; width: clamp(38px, 11vw, 72px); height: auto; border-radius: 20%; }
+.app-name { margin: 0; color: var(--green); font: 600 clamp(1rem, 4.65vw, 1.85rem)/1.12 Fredoka, system-ui, sans-serif; }
+.app-name a { color: inherit; text-decoration: none; }
+.badges { position: absolute; top: clamp(11px, 3.3vw, 22px); right: clamp(11px, 3.3vw, 22px); display: grid; gap: 3px; width: clamp(72px, 20vw, 128px); }
+.badges a, .badges img { display: block; width: 100%; }
+.badges a { border-radius: 4px; }
+.badges img { height: auto; }
+.app-description { margin: 10px 0 0; font-size: 1rem; }
+.socials { display: flex; align-items: center; justify-content: center; gap: clamp(18px, 5vw, 30px); padding: 12px 0 6px; }
+.socials a { display: block; border-radius: 50%; }
+.socials img { display: block; width: clamp(44px, 11vw, 66px); height: auto; }
+a:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+.app-name a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.badges a:hover, .socials a:hover { opacity: .8; }
+@media (min-width: 500px) { .app-description { font-size: 1.15rem; } }
+@media (max-width: 350px) {
+  .card-heading { flex-wrap: wrap; }
+  .app-name { flex-basis: 100%; }
+}
+@media (forced-colors: active) { .garden { border: 2px solid CanvasText; } }
