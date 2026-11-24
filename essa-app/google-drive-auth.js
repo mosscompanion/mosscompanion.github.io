@@ -1,5 +1,25 @@
 'use strict';
 
+// This remembers which local journal to open, never Google credentials.
+const rememberedAccountKey = 'moss.essa.rememberedAccount.v1';
+window.mossReadRememberedAccount = () => {
+  try {
+    const account = JSON.parse(window.localStorage.getItem(rememberedAccountKey));
+    if (!account || typeof account.id !== 'string' ||
+        !/^[a-zA-Z0-9_-]+$/.test(account.id) ||
+        typeof account.email !== 'string' || !account.email.trim()) return '';
+    return JSON.stringify({id: account.id, email: account.email});
+  } catch (_) {
+    return '';
+  }
+};
+window.mossRememberAccount = (id, email) => {
+  window.localStorage.setItem(rememberedAccountKey, JSON.stringify({id, email}));
+};
+window.mossForgetAccount = () => {
+  window.localStorage.removeItem(rememberedAccountKey);
+};
+
 let releaseJournalLock;
 window.mossAcquireJournalLock = (account) => new Promise((resolve, reject) => {
   if (!navigator.locks) {
